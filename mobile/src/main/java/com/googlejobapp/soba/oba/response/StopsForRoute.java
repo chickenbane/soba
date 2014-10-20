@@ -16,7 +16,7 @@ public class StopsForRoute extends BaseResponse {
     private static class StopsForRouteEntry {
         private String routeId;
         private List<String> stopIds;
-        private List<StopGrouping> stopGroupings;
+        //private List<StopGrouping> stopGroupings;
     }
 
 
