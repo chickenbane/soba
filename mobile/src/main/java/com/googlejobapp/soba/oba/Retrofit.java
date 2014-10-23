@@ -26,7 +26,7 @@ public class Retrofit {
         System.out.println("stop] " + stop.getName() + " (" + stop.getLat() + ", " + stop.getLon() + ")");
         for (String id : stop.getRouteIds()) {
             Route r = response.getReferences().getRoute(id);
-            System.out.println("    " + r.getShortName() + " " + r.getDescription());
+            System.out.println("    " + r.getShortName() + " " + r.getDescription() + " (routeId=" + id + ")");
         }
     }
 
@@ -60,5 +60,7 @@ public class Retrofit {
 
         printArrivalsAndDeparturesForStop(service.arrivalsAndDeparturesForStop("TEST", "1_11011"));
 
+        // http://api.pugetsound.onebusaway.org/api/where/stops-for-route/1_100289.json?key=TEST&version=2
+//        StopsForRoute stopsForRoute = service.stopsForRoute("TEST", "1_100289");
     }
 }

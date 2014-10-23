@@ -1,5 +1,6 @@
 package com.googlejobapp.soba.oba.response;
 
+
 import java.util.List;
 
 /**
@@ -16,11 +17,20 @@ public class StopsForRoute extends BaseResponse {
     private static class StopsForRouteEntry {
         private String routeId;
         private List<String> stopIds;
-        //private List<StopGrouping> stopGroupings;
+
+        // TODO: Do I need StopGrouping and Polyline?
+        private List<StopGrouping> stopGroupings;
+        private List<Polyline> polylines;
     }
 
+    private static class StopGrouping {
+        private boolean ordered;
+        private String type;  // direction
+        private List<StopGroup> stopGroups;
+    }
 
     public References getReferences() {
         return data.references;
     }
+
 }
